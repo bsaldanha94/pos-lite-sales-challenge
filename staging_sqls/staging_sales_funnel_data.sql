@@ -39,7 +39,7 @@ SELECT
 , country
 , COALESCE(l.campaign_id, c.campaign_id) AS campaign_id
 , COALESCE(l.campaign_name, c.campaign_name) AS campaign_name
-, CASE WHEN product = ‘unknown’ AND regexp_like(campaign_name, 'pos-lite') THEN 'pos-lite'
+, CASE WHEN product = 'unknown' AND regexp_like(campaign_name, 'pos-lite') THEN 'pos-lite'
        WHEN (product IS NULL) AND regexp_like(campaign_name, 'poslite-cr') THEN 'poslite-cr'
        WHEN (product IS NULL) AND regexp_like(campaign_name, 'pos-lite') THEN 'pos-lite'
        ELSE product END AS product 
