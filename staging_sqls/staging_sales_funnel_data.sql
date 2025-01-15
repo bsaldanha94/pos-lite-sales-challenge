@@ -33,7 +33,8 @@ FROM raw_data
 , cleaned_leads_data AS (
 -- Replaced null values in campaign_id and campaign_name columns with values from campaign lookup CTE
 -- Cleaned values in product column
- date
+SELECT 
+  date
 , currency
 , country
 , COALESCE(l.campaign_id, c.campaign_id) AS campaign_id
