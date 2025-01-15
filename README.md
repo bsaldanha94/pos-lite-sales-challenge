@@ -34,5 +34,6 @@ However, for the sake of simplicity, the data used in the dashboard is not loade
 The dashboard gives a high level overview of important metrics regarding Marketing and Sales activites such as:
 - Customer Acquistion costs (Website related)
 - Marketing Spends (Website related)
+- Total Sign-ups (Website related)
 - Click Through Rate (Sales Funnel)
 - Cost Per Click (Sales Funnel)
