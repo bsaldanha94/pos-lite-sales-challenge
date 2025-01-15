@@ -21,7 +21,7 @@ SELECT
 , total_signed_leads
 , total_pos_lite_deals
 FROM leads_funnel
-WHERE (campaign_name <> ‘unknown’) AND (campaign_id IS NOT NULL)
+WHERE (campaign_name <> 'unknown') AND (campaign_id IS NOT NULL)
 )
 , campaign_lookup AS (
 -- Temp lookup table with list of campaign ids and campaign names
@@ -39,10 +39,10 @@ SELECT
 , country
 , COALESCE(l.campaign_id, c.campaign_id) AS campaign_id
 , COALESCE(l.campaign_name, c.campaign_name) AS campaign_name
-, CASE WHEN product = ‘unknown’ AND regexp_like(campaign_name, ‘pos-lite’) THEN ‘pos-lite’
-           WHEN (product IS NULL) AND regexp_like(campaign_name, ‘poslite-cr’) THEN ‘poslite-cr’
-           WHEN (product IS NULL) AND regexp_like(campaign_name, ‘pos-lite’) THEN ‘pos-lite’
-            ELSE product END AS product 
+, CASE WHEN product = ‘unknown’ AND regexp_like(campaign_name, 'pos-lite') THEN 'pos-lite'
+       WHEN (product IS NULL) AND regexp_like(campaign_name, 'poslite-cr') THEN 'poslite-cr'
+       WHEN (product IS NULL) AND regexp_like(campaign_name, 'pos-lite') THEN 'pos-lite'
+       ELSE product END AS product 
 , channel_3
 , channel_4
 , channel_5 
