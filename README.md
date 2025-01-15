@@ -6,6 +6,7 @@ In order to answer the questions in the challenge, 3 staging tables were created
 - **staging_channel_data**
 - **staging_sales_funnel_data**
 
+## Data issues and solutions applied during staging
 Issues identified with **web_order** data
 - Null values in date and campaign_id column 
 - Null and 'unknown' values in country_code column can be imputed by creating a lookup table with country codes per campaign id 
@@ -23,7 +24,7 @@ Issues identified in the **leads_funnel** data
 - Replaced null values in campaign_id and campaign_name columns with values from campaign lookup CTE
 - Cleaned values in product column
 
-
+## Dashboard creation
 For creating the dashboard in Looker Studio, I created 2 data marts based on the data that was cleaned in the tables above:
 - **website_leads_kpis** : This table was used for reporting on leads that come directly to the website.
 - **sales_funnel_kpis** : This table was used for reporting on lead progression through the sales funnel.
